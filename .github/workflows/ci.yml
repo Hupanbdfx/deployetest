@@ -32,6 +32,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: registry.cn-hangzhou.aliyuncs.com/shumai_images/test:v1
+          tags: registry.cn-hangzhou.aliyuncs.com/wode2_images/test:v1
           build-args: |
             ENV=prod
