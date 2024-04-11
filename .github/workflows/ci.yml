@@ -22,8 +22,8 @@ jobs:
         # 配置登录信息，secrets 变量在 github settings -> secrets 中设置
         with:
           registry: registry.cn-hangzhou.aliyuncs.com
-          username: 234376292@qq.com
-          password: hp05712780ss
+          username: loveemilyyufen@163.com
+          password: emily110811
 
       # 构建镜像并上传到阿里云容器镜像仓库 (自行百度创建自己的镜像仓库)
       - name: Build and push Docker images
@@ -32,6 +32,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: registry.cn-shanghai.aliyuncs.com/hupan_images/test:v1
+          tags: registry.cn-hangzhou.aliyuncs.com/shumai_images/test:v1
           build-args: |
             ENV=prod
