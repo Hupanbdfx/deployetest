@@ -35,3 +35,19 @@ jobs:
           tags: registry.cn-hangzhou.aliyuncs.com/hupan_images/test:v1
           build-args: |
             ENV=prod
+      
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            docker login -u234376292@qq.com -p hp05712780ss registry.cn-hangzhou.aliyuncs.com
+            docker stop test
+            docker rm test
+            docker rmi registry.cn-hangzhou.aliyuncs.com/hupan_images/test:v1
+            docker pull registry.cn-hangzhou.aliyuncs.com/hupan_images/test:v1
+            docker run -d --name test -p 8080:8080 registry.cn-hangzhou.aliyuncs.com/hupan_images/test:v1
+
