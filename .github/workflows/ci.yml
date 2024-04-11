@@ -23,7 +23,7 @@ jobs:
         with:
           registry: registry.cn-hangzhou.aliyuncs.com
           username: 234376292@qq.com
-          password: Hupan199122
+          password: hp05712780ss
 
       # 构建镜像并上传到阿里云容器镜像仓库 (自行百度创建自己的镜像仓库)
       - name: Build and push
