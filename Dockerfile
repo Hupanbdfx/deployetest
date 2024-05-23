@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:16-alpine as builder
 ARG ENV
 RUN NODE_ENV=$ENV
 RUN mkdir /working
